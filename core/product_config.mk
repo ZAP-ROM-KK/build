@@ -184,8 +184,8 @@ ifneq ($(strip $(TARGET_BUILD_APPS)),)
 all_product_configs := $(call get-product-makefiles,\
     $(SRC_TARGET_DIR)/product/AndroidProducts.mk)
 else
-  ifneq ($(OSE_BUILD),)
-    all_product_configs := $(shell ls device/*/$(OSE_BUILD)/ose.mk)
+  ifneq ($(ZAP_BUILD),)
+    all_product_configs := $(shell ls device/*/$(ZAP_BUILD)/zap.mk)
   else
     # Read in all of the product definitions specified by the AndroidProducts.mk
     # files in the tree.
@@ -193,7 +193,7 @@ else
   endif
 endif
 
-ifeq ($(OSE_BUILD),)
+ifeq ($(ZAP_BUILD),)
 # Find the product config makefile for the current product.
 # all_product_configs consists items like:
 # <product_name>:<path_to_the_product_makefile>

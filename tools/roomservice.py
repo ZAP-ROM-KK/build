@@ -34,16 +34,16 @@ except ImportError:
 
 # Config
 # set this to the default remote to use in repo
-default_rem = "ose"
+default_rem = "zap"
 # set this to the default revision to use (branch/tag name)
-default_rev = "ose"
+default_rev = "zap"
 # set this to the remote that you use for projects from your team repos
 # example fetch="https://github.com/omnirom"
 default_team_rem = "gh"
 # this shouldn't change unless google makes changes
 local_manifest_dir = ".repo/local_manifests"
 # change this to your name on github (or equivalent hosting)
-android_team = "Team-OSE"
+android_team = "ZAP-ROM"
 
 
 def check_repo_exists(git_data):
@@ -200,13 +200,13 @@ def parse_device_from_folder(device):
     elif len(search) == 1:
         location = search[0]
     else:
-        print("Your device was not found. Attempting to retrieve device repository from Team-OSE Github..")
+        print("Your device was not found. Attempting to retrieve device repository from ZAP Github..")
         location = parse_device_from_manifest(device)
     return location
 
 
 def parse_dependency_file(location):
-    dep_file = "ose.dependencies"
+    dep_file = "zap.dependencies"
     dep_location = '/'.join([location, dep_file])
     if not os.path.isfile(dep_location):
         print("WARNING: %s file not found" % dep_location)
